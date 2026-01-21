@@ -4,6 +4,7 @@ import pandas as pd
 import requests
 import os
 from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
 
 # --------------------------------------------------
 # LOAD ENV
@@ -11,6 +12,16 @@ from dotenv import load_dotenv
 load_dotenv()
 
 POWERBI_API = "https://api.powerbi.com/v1.0/myorg"
+# --------------------------------------------------
+# CORS (ALLOW ALL)
+# --------------------------------------------------
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],      # Allow all origins
+    allow_credentials=True,
+    allow_methods=["*"],      # Allow all HTTP methods
+    allow_headers=["*"],      # Allow all headers
+)
 
 # Azure AD (STATIC – ENV)
 TENANT_ID = os.getenv("TENANT_ID")
