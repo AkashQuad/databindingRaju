@@ -27,7 +27,7 @@ AZURE_STORAGE_CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 
 # Constants
 DATASET_NAME = "Migrated_Dataset"
-TABLE_NAME = "Migrated_Table"
+TABLE_NAME = "MainTable"
 
 # --------------------------------------------------
 # APP
