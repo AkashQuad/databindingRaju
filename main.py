@@ -12,16 +12,6 @@ from fastapi.middleware.cors import CORSMiddleware
 load_dotenv()
 
 POWERBI_API = "https://api.powerbi.com/v1.0/myorg"
-# --------------------------------------------------
-# CORS (ALLOW ALL)
-# --------------------------------------------------
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],      # Allow all origins
-    allow_credentials=True,
-    allow_methods=["*"],      # Allow all HTTP methods
-    allow_headers=["*"],      # Allow all headers
-)
 
 # Azure AD (STATIC – ENV)
 TENANT_ID = os.getenv("TENANT_ID")
@@ -43,6 +33,16 @@ TABLE_NAME = "Migrated_Table"
 # APP
 # --------------------------------------------------
 app = FastAPI(title="Tableau to Power BI Migration")
+# --------------------------------------------------
+# CORS (ALLOW ALL)
+# --------------------------------------------------
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],      # Allow all origins
+    allow_credentials=True,
+    allow_methods=["*"],      # Allow all HTTP methods
+    allow_headers=["*"],      # Allow all headers
+)
 
 # --------------------------------------------------
 # AUTH TOKEN
