@@ -1,0 +1,17 @@
+fastapi
+
+uvicorn[standard]
+
+python-dotenv
+
+requests
+
+pandas
+
+azure-storage-blob
+
+openpyxl
+
+xlrd
+
+ 
